@@ -32,7 +32,7 @@ const VictimsInput = (props) => {
   return (
     <Grid container justify="center" item xs={12} style={{ margin: "30px" }}>
       <TextField
-        label="mujrim ki shanakht"
+        label="mujrim ka naam/shanakht"
         variant="outlined"
         onKeyUp={(e) => handleChange(e)}
       />
