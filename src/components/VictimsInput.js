@@ -10,7 +10,7 @@ const VictimsInput = (props) => {
   function handleChange(e) {
     let code = e.keyCode ? e.keyCode : e.which;
     let victim = e.target.value.toLowerCase();
-    if (code === 13) {
+    if (code === 13 && victim !== "") {
       if (victim === "army" || victim === "jawad" || victim === "jawwad" || victim === "jawaad" || victim === "military") {
         setDanger(true);
       } else {
