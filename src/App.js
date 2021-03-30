@@ -34,7 +34,7 @@ const App = (props) => {
 
   console.log("MITHAI BATT RAI HA IDR???")
 
-  const instructions = () => "khali jaga me awam ke naam dalein (ak wakt me 1 naam), darj zeil ak pheeta bna aega jis mein naam darj hojaengey, ghomany k lye battan dabein, phr pheeta apni marzi se kisi bi naam par ruk jaega ar wo pizza khilane ka zimadar hoga"
+  const instructions = () => "khali jaga me awam ke naam puur karein (ak wakt me 1 naam), darj zeil ak pheeta bna aega jis mein naam darj hojaengey, ghomany k lye battan dabein, phr pheeta apni marzi se kisi bi naam par ruk jaega ar wo farrd pizza khilane ka zimadar hoga"
 
 
 
@@ -54,13 +54,13 @@ const App = (props) => {
         victims={victims}
         setVictims={setVictims}
       />
+      {danger && <Typography style={{ color: "red" }}>maafi</Typography>}
       <Grid container justify="center" item xs={12} style={{ overflow: "hidden", position: 'relative', padding: '50px' }}>
-      <img alt="pointer" src={pizzaIcon} style={{height: '70px', width: '70px', position: 'absolute', top: '0px', zIndex: '5'}}></img>
+        <img alt="pointer" src={pizzaIcon} style={{height: '70px', width: '70px', position: 'absolute', top: '0px', zIndex: '5'}}/>
         {Boolean(victims.length > 0) && (
           <PizzaSpinner chartData={generateVictimsData()} />
         )}
       </Grid>
-      {danger && <Typography style={{ color: "red" }}>maafi</Typography>}
     </Grid>
   );
 }
