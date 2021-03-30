@@ -35,6 +35,7 @@ const VictimsInput = (props) => {
         label="mujrim ka naam/shanakht"
         variant="outlined"
         onKeyUp={(e) => handleChange(e)}
+        style={{width: '500px'}}
       />
       {emptyCheck && (
         <Button

@@ -47,7 +47,7 @@ const App = (props) => {
           <HelpIcon fontSize="small"/>
         </Typography>
       </Tooltip>
-      <Typography>Naam Likhein Ar Jadoo Dekhein</Typography>
+      <Typography>Serve Pizza Thanks</Typography>
       <VictimsInput
         emptyCheck={Boolean(victims.length > 0)}
         setDanger={setDanger}
