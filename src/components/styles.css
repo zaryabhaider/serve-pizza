@@ -1,6 +1,5 @@
 .spinner-wrapper {
   border-radius: 100%;
-  transition: transform 0.8s ease-out;
   overflow: hidden;
   z-index: 0;
 }
@@ -8,39 +7,4 @@
 .stationary {
   height: 400px;
   width: 400px;
-}
-
-.spinning {
-  animation: roll1 0.5s infinite linear;
-}
-
-.transition {
-  animation: roll2 1s infinite linear;
-}
-
-@keyframes roll1 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes roll2 {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes result {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(180deg);
-  }
 }

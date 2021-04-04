@@ -8,7 +8,7 @@ import "./styles.css";
 import "chartjs-plugin-labels";
 
 
-var resultDegree = random(1, 359);
+var resultDegree = 0;
 
 const PizzaSpinner = (props) => {
   const { chartData } = props;
@@ -17,14 +17,9 @@ const PizzaSpinner = (props) => {
   useEffect(() => {
     setTimeout(() => {
       if (spin === "spinning") {
-        setSpin("transition");
-      }
-    }, 3000);
-    setTimeout(() => {
-      if (spin === "transition") {
         setSpin("stopped");
       }
-    }, 4000);
+    }, 6000);
   }, [spin]);
 
   const pieOptions = {
@@ -66,11 +61,9 @@ const PizzaSpinner = (props) => {
     ]
   };
 
-  function avoidDoublePizza() {}
 
   function startRotation() {
-    avoidDoublePizza();
-    resultDegree = random(1, 359);
+    resultDegree = random(1, 359)
     if (spin === "stationary" || spin === "stopped") {
       setSpin("spinning");
     }
@@ -93,22 +86,26 @@ const PizzaSpinner = (props) => {
       alignItems="center"
       justify="center"
     >
+      {console.log(spin)}
       <Grid
         item
         xs={false}
         className={"spinner-wrapper"}
         style={
-          spin === "stopped"
+          spin === "spinning"
             ? {
+                transition: 'transform 6s cubic-bezier(0.59, 0.01, 0.05, 1)',
+                transform: `rotate(${resultDegree+(360*9)}deg)`
+              }
+            : spin === "stopped"
+              ? {
                 transform: `rotate(${resultDegree}deg)`
               }
-            : {}
+              : {}
         }
       >
         <div
-          className={`stationary ${spin === "spinning" && "spinning"} ${
-            spin === "transition" && "transition"
-          }`}
+          className={'stationary'}
         >
           <Pie data={data} options={pieOptions} height={200} width={200} />
         </div>
@@ -118,7 +115,7 @@ const PizzaSpinner = (props) => {
           variant="contained"
           style={{ zIndex: "5", margin: "20px", backgroundColor: "#21ce99" }}
           onClick={startRotation}
-          disabled={(spin === "spinning") || (spin === "transition")}
+          disabled={(spin === "spinning")}
         >
           {
             spin === "stationary" ? "ghomaya jaye" : "ye tou chuss ha"
