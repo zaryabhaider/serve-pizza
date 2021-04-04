@@ -19,7 +19,7 @@ const PizzaSpinner = (props) => {
       if (spin === "spinning") {
         setSpin("stopped");
       }
-    }, 6000);
+    }, 8000);
   }, [spin]);
 
   const pieOptions = {
@@ -94,7 +94,7 @@ const PizzaSpinner = (props) => {
         style={
           spin === "spinning"
             ? {
-                transition: 'transform 6s cubic-bezier(0.59, 0.01, 0.05, 1)',
+                transition: 'transform 8s cubic-bezier(0.59, 0.01, 0.05, 1)',
                 transform: `rotate(${resultDegree+(360*9)}deg)`
               }
             : spin === "stopped"
